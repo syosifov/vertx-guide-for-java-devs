@@ -62,7 +62,9 @@ public class MainVerticle extends AbstractVerticle {
     Future<Void> future = Future.future();
 
     dbClient = JDBCClient.createShared(vertx, new JsonObject()  // <1>
-      .put("url", "jdbc:hsqldb:file:db/wiki")   // <2>
+//      .put("url", "jdbc:hsqldb:file:db/wiki")   // <2>
+      .put("url", "jdbc:hsqldb:hsql://localhost:9001/testDB")   // <2>
+      .put("User","SA")
       .put("driver_class", "org.hsqldb.jdbcDriver")   // <3>
       .put("max_pool_size", 30));   // <4>
 
