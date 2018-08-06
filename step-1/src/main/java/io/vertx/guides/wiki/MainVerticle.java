@@ -20,6 +20,7 @@ package io.vertx.guides.wiki;
 import com.github.rjeschke.txtmark.Processor;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
+import io.vertx.core.Launcher;
 import io.vertx.core.http.HttpServer;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
@@ -297,4 +298,9 @@ public class MainVerticle extends AbstractVerticle {
     });
     // end::another-start[]
   }
+  
+  public static void main(final String[] args) {
+      Launcher.executeCommand("run", MainVerticle.class.getName());
+  }
+  
 }
